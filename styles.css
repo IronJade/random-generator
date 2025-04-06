@@ -1,0 +1,423 @@
+/* Random Generator Plugin - Gooey Cube Style */
+
+@font-face {
+    font-family: 'Gothic Fantasy';
+    src: url('https://fonts.cdnfonts.com/css/blackletter-shadow') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Main styling for the modal */
+.random-generator-modal {
+    background-color: #f8f7f3;
+    border: 1px solid #000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    padding: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #2d2d2d;
+}
+
+.random-generator-modal h2 {
+    font-family: var(--font-serif);
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid #4da167;
+    color: #000000;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.random-generator-modal h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 1px;
+    background-color: #4da167;
+}
+
+.random-generator-modal h3 {
+    font-family: var(--font-serif);
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+    color: #000000;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-left: 4px solid #4da167;
+    padding-left: 10px;
+    text-transform: uppercase;
+}
+
+/* Generator selector styling */
+.generator-select-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    background-color: rgba(77, 161, 103, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    border-left: 4px solid #4da167;
+}
+
+.generator-select-container span {
+    font-weight: 500;
+    margin-right: 0.75rem;
+    color: #000000;
+}
+
+.generator-select {
+    flex-grow: 1.5;
+    background-color: #f8f7f3;
+    color: #2d2d2d;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.generator-select:hover {
+    border-color: #4da167;
+}
+
+.generator-select:focus {
+    border-color: #4da167;
+    box-shadow: 0 0 0 2px rgba(77, 161, 103, 0.2);
+}
+
+/* Result area styling */
+.generator-result-container {
+    margin-bottom: 1.5rem;
+}
+
+.generator-result {
+    background-color: #f8f7f3;
+    border: 1px solid #000000;
+    border-radius: 0px;
+    padding: 1rem;
+    min-height: 4rem;
+    color: #2d2d2d;
+    line-height: 1.5;
+    font-size: 1rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    position: relative;
+}
+
+.generator-result::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    height: 4px;
+    background-color: #4da167;
+    display: block;
+}
+
+.generator-result:hover {
+    background-color: #f0eee8;
+}
+
+/* Button styling */
+.generator-button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+.generator-button-container button {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 0px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.generator-button-container button:hover {
+    background-color: #4d4d4d;
+}
+
+.generator-button-container button:first-child {
+    background-color: #4da167;
+    color: #ffffff;
+    border-color: #000000;
+}
+
+.generator-button-container button:first-child:hover {
+    background-color: #3d7f52;
+}
+
+/* Settings panel styling */
+.generator-settings {
+    background-color: #f8f7f3;
+    border-radius: 0px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #000000;
+    position: relative;
+}
+
+.generator-settings::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    height: 4px;
+    background-color: #4da167;
+    display: block;
+}
+
+.generator-settings h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #000000;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(77, 161, 103, 0.3);
+    padding-bottom: 0.5rem;
+}
+
+.field-settings {
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+    border-left: 3px solid #4da167;
+}
+
+/* Textarea for field items */
+.setting-item textarea {
+    min-height: 100px;
+    line-height: 1.4;
+    background-color: #f8f7f3;
+    border: 1px solid #000000;
+    border-radius: 0px;
+    font-size: 0.9rem;
+}
+
+/* Delete button warning style */
+.setting-item button.mod-warning {
+    background-color: rgba(224, 70, 70, 0.1);
+    color: rgb(224, 70, 70);
+    border-color: rgba(224, 70, 70, 0.3);
+}
+
+.setting-item button.mod-warning:hover {
+    background-color: rgba(224, 70, 70, 0.2);
+    border-color: rgba(224, 70, 70, 0.4);
+}
+
+/* Generate result animation */
+@keyframes highlight-result {
+    0% {
+        background-color: rgba(77, 161, 103, 0.3);
+    }
+    100% {
+        background-color: #f8f7f3;
+    }
+}
+
+.highlight-new-result {
+    animation: highlight-result 1.2s ease;
+}
+
+/* Table styling for results that might include tables */
+.generator-result table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.generator-result table th {
+    background-color: rgba(77, 161, 103, 0.2);
+    border: 1px solid #000000;
+    padding: 6px;
+    text-align: left;
+}
+
+.generator-result table td {
+    border: 1px solid #000000;
+    padding: 6px;
+}
+
+.generator-result table tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Encounter box styling */
+.generator-result .encounter-box {
+    border: 1px solid #000000;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: rgba(77, 161, 103, 0.05);
+    position: relative;
+}
+
+.generator-result .encounter-box::before {
+    content: "Encounter";
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background-color: #4da167;
+    color: white;
+    padding: 0 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Specific style for Gooey Cube heading style */
+.gooey-header {
+    text-transform: uppercase;
+    text-align: center;
+    font-family: var(--font-serif);
+    font-weight: 700;
+    padding: 10px 0;
+    margin: 15px 0;
+    letter-spacing: 1px;
+    border-top: 2px solid #4da167;
+    border-bottom: 2px solid #4da167;
+}
+
+/* Styles for Add Generator Modal */
+.add-generator-modal {
+    max-width: 500px;
+    width: 100%;
+}
+
+.add-generator-modal .modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.add-generator-modal .setting-row {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+    gap: 1rem;
+}
+
+.add-generator-modal .setting-row label {
+    text-align: right;
+    color: var(--text-muted);
+}
+
+.add-generator-modal .setting-control {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background-color: var(--background-secondary);
+    color: var(--text-normal);
+}
+
+.add-generator-modal .setting-control:focus {
+    outline: 2px solid var(--interactive-accent);
+    border-color: var(--interactive-accent);
+}
+
+.add-generator-modal .fields-section {
+    border-top: 1px solid var(--background-modifier-border);
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.add-generator-modal .field-row {
+    display: grid;
+    grid-template-columns: 150px 1fr 100px;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.add-generator-modal .field-row input,
+.add-generator-modal .field-row textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background-color: var(--background-secondary);
+    color: var(--text-normal);
+}
+
+.add-generator-modal .field-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.add-generator-modal .add-field-btn {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.add-generator-modal .add-field-btn:hover {
+    filter: brightness(1.1);
+}
+
+.add-generator-modal .remove-field-btn {
+    background-color: var(--text-accent);
+    color: white;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.add-generator-modal .remove-field-btn:hover {
+    filter: brightness(1.1);
+}
+
+.add-generator-modal .modal-button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.add-generator-modal .modal-button-container button {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.add-generator-modal .create-btn {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+    border: none;
+}
+
+.add-generator-modal .cancel-btn {
+    background-color: var(--background-secondary);
+    color: var(--text-normal);
+    border: 1px solid var(--background-modifier-border);
+}
+
+.add-generator-modal .create-btn:hover,
+.add-generator-modal .cancel-btn:hover {
+    filter: brightness(1.1);
+}

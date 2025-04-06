@@ -1,0 +1,23 @@
+{
+  "name": "obsidian-random-generator",
+  "version": "1.0.0",
+  "description": "Generate random content from customizable templates, perfect for RPGs, writing prompts, and more.",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+    "version": "node version-bump.mjs && git add manifest.json versions.json"
+  },
+  "keywords": [
+    "obsidian",
+    "generator",
+    "random",
+    "rpg",
+    "writing"
+  ],
+  "author": "IronJade",
+  "license": "MIT",
+  "dependencies": {
+    "obsidian": "latest"
+  }
+}

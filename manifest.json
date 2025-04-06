@@ -1,0 +1,10 @@
+{
+  "id": "obsidian-random-generator",
+  "name": "Random Generator",
+  "version": "1.0.0",
+  "minAppVersion": "0.12.0",
+  "description": "Generate random content from customizable templates, perfect for RPGs, writing prompts, and more.",
+  "author": "IronJade",
+  "authorUrl": "https://github.com/ironjade",
+  "isDesktopOnly": false
+}
