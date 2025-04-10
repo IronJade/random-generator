@@ -1,0 +1,20 @@
+# Dependency directories
+node_modules/
+
+# Build files
+main.js
+*.js.map
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

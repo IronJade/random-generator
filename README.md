@@ -1,120 +1,97 @@
-# Random Generator for Obsidian
+# Random Generator Plugin for Obsidian
 
-This Obsidian plugin allows you to generate random content based on fully customizable templates. Perfect for RPGs, writing prompts, worldbuilding, and creative projects.
+A powerful plugin for [Obsidian](https://obsidian.md) that allows you to generate random content based on customizable templates. Perfect for RPG games, creative writing, worldbuilding, or any situation where you need random but structured content.
 
 ## Features
 
-- **Multiple Pre-configured Generators**: Comes with ready-to-use generators for:
-  - Tavern Names
-  - Fantasy Characters
-  - Quest Hooks
-- **Fully Customizable**: 
-  - Edit existing generators
-  - Create new generators with custom fields
-  - Modify format templates
-- **Flexible Content Generation**:
-  - Generate random content with a single click
-  - Insert generated content directly into your notes
-- **Easy Management**:
-  - Add, edit, rename, and delete generators
-  - Export and import generator configurations
-- **Customizable Appearance**:
-  - Option to use custom CSS for styling
+- Generate random content with customizable templates
+- Pre-configured generators for taverns, fantasy characters, quests, and more
+- Create and customize your own generators with simple syntax
+- Import and export generators to share with others
+- Customize appearance with CSS
+- Insert generated content directly into your notes
+- Supports variables, conditional logic, and weighted options
 
-## How to Use
+## Usage
 
-### Generating Content
+1. Open the Random Generator by clicking on the dice icon in the ribbon or using the command palette (`Ctrl+P` and search for "Random Generator")
+2. Select the generator you want to use from the dropdown menu
+3. Click "Generate" to create random content based on your template
+4. Click "Insert" to add the content into your note at the cursor position
+5. Use the "Copy" button to copy the content to your clipboard
 
-1. Access the Random Generator:
-   - Click the dice icon in the left ribbon
-   - Use the command palette (Ctrl/Cmd+P)
-   - Use the "Insert Random Generation" command
+## Creating Custom Generators
 
-2. In the generator modal:
-   - Select a generator from the dropdown
-   - Click "Generate" to create random content
-   - Click "Insert" to add the content to your current note
-
-### Managing Generators
-
-1. Go to Settings > Random Generator
-
-2. For Existing Generators:
-   - Edit generator name and description
-   - Modify format templates
-   - Add, rename, or delete fields
-   - Duplicate or remove entire generators
-
-3. Creating a New Generator:
-   - Click "Add Generator"
-   - Enter a name and description
-   - Define a format template using {Field} placeholders
-   - Add fields with possible values
-   - Example format: `A {Adjective} {Noun} who {Action}`
-
-### Export and Import
-
-- **Export**: Save your custom generators to a JSON file
-- **Import**: Add generators from previously exported files
-
-## Example Generators
-
-### Tavern Generator
-Format: `{Beginning Name} {Ending Name}, known for {Known For}.`
-- Generates names like "The Rusty Anchor, known for its strong ale"
-
-### Fantasy Character Generator
-Format: `A {Personality} {Race} {Class} who was once a {Background}.`
-- Generates characters like "A brave and reckless Half-Orc Barbarian who was once a Pirate"
-
-### Quest Generator
-Format: `{Quest Giver} needs you to {Task} {Location}, {Complication}.`
-- Generates quests like "A mysterious wizard needs you to retrieve a stolen artifact in a haunted forest, but supernatural forces are interfering"
-
-## Customization
-
-### Custom CSS
-
-- Enable custom styling by providing a path to a CSS file
-- Customize the appearance of generators and modals
+1. Go to the plugin settings
+2. Click "Add Generator"
+3. Fill in the name, description, and format template
+4. Add fields with their possible values
+5. The format template uses field names in curly braces (e.g., `{Character} is from {Location}`)
+6. For advanced templates, you can use:
+   - Nested fields: `{Character.Name}`, `{Character.Class}`
+   - Conditional logic: `{if:Condition}{Result}{else}{Alternative}{endif}`
+   - Weighted options: `{Field:3:Common Option|1:Uncommon Option|0.5:Rare Option}`
 
 ## Installation
 
 ### From Obsidian Community Plugins
 
-1. Open Obsidian Settings
-2. Navigate to Community Plugins
-3. Browse and search for "Random Generator"
-4. Click Install, then Enable
+1. Open Obsidian
+2. Go to Settings > Community Plugins
+3. Disable Safe Mode
+4. Click "Browse" and search for "Random Generator"
+5. Install the plugin and enable it
 
 ### Manual Installation
 
-1. Download the latest release from the GitHub repository
-2. Extract files into your Obsidian vault's `.obsidian/plugins/` directory
-3. Enable the plugin in Obsidian settings
+1. Download the latest release from the [GitHub repository](https://github.com/yourusername/obsidian-random-generator/releases)
+2. Extract the files into your Obsidian vault's `.obsidian/plugins/random-generator` directory
+3. Restart Obsidian and enable the plugin in Settings > Community Plugins
+
+## Examples
+
+### Simple Character Generator
+```
+{Name} is a {Race} {Class} who carries a {Weapon} and seeks to {Goal}.
+```
+
+### Tavern Generator
+```
+The {TavernAdjective} {TavernNoun} is run by {OwnerName}, a {OwnerDescription}. 
+The specialty is {FoodType} and the atmosphere is {Atmosphere}.
+```
 
 ## Development
 
 ### Prerequisites
-- Node.js
-- npm or yarn
+
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [Obsidian](https://obsidian.md)
 
 ### Setup
-1. Clone the repository
-2. Run `npm install`
-3. Run `npm run dev` for development mode
+
+1. Clone this repository
+2. Run `npm install` to install dependencies
+3. Run `npm run dev` to start the development server with hot-reload
 
 ### Building
-Run `npm run build` to create a production build
+
+Run `npm run build` to create a production build.
+
+### Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
-MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Support
 
-Encounter an issue or have a suggestion? Please file an issue on the GitHub repository.
-
----
-
-Create, generate, and inspire with random content in your Obsidian vault!
+If you encounter any issues or have feature requests, please file an issue on the [GitHub repository](https://github.com/yourusername/obsidian-random-generator/issues).
